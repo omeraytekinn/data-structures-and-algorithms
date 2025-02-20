@@ -10,7 +10,7 @@ List is an interface which includes necessary methods for list operations (eg. i
     1. <b>ArrayList</b> ([com.omeraytekin.data_structures.ArrayList](src/com/omeraytekin/data_structures/ArrayList.java))</br>
     First implementation of list is by using dynamic array. In dynamic array there is an initial sized array. When this array is full, new bigger array will be created. This new array size will be old array size multiplied by grow factor. After creating new array all elements of old array will be moved to new array.</br>
     <b>Note:</b> When grow factor is between 1 and 2 and array size is small, it can cause multiplying and flooring array size and grow factor is equal to old array size. To prevent this situation, after multiplying and flooring array size and grow factor, It'll be increased by 1.</br>
-    To create ArrayList object there is 3 ways.</br>
+    To create ArrayList object there is 4 ways.</br>
     - Using default constructor: By using default constructor, initial array size will be 32 and grow factor will be 2.</br>
     ```java
     List<Integer> list = new ArrayList<>();
@@ -22,6 +22,11 @@ List is an interface which includes necessary methods for list operations (eg. i
     - Using initial size and grow factor constructor: By using initial size constructor, initial array size and grow factor will be given value</br>
     ```java
     List<Integer> list = new ArrayList<>(32, 1.5);
+    ```
+    - Using existing array constructor: By using existing array constructor, initial array size will be given array size and grow factor will be 2</br>
+    ```java
+    Integer[] items = {1,2,3,4,5};
+    List<Integer> list = new ArrayList<>(items);
     ```
     2. <b>LinkedList</b> ([com.omeraytekin.data_structures.LinkedList](src/com/omeraytekin/data_structures/LinkedList.java))</br>
     [TBA]
