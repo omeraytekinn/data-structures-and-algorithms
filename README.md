@@ -1,7 +1,7 @@
 
 # Data Structures and Algorithms
 
-In this project, popular algorithms will be implemented. Also necessary data structures which be used in that algorithms will be implemented. Java language used in implementations. Current progress is below.
+In this project, popular algorithms will be implemented. Also necessary data structures which will be used in that algorithms will be implemented. Java language used in implementations. Current progress is below.
 
 ## Data Structures
 
