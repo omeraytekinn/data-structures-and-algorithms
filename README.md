@@ -32,7 +32,7 @@ List is an interface which includes necessary methods for list operations (eg. i
     [TBA]
 2. <b>Stack</b> ([com.omeraytekin.data_structures.Stack](src/com/omeraytekin/data_structures/Stack.java))</br>
     [TBA]
-    1. <b>ArrayStack</b> ([com.omeraytekin.data_structures.ArrayList](src/com/omeraytekin/data_structures/ArrayStack.java))</br>
+    1. <b>ArrayStack</b> ([com.omeraytekin.data_structures.ArrayStack](src/com/omeraytekin/data_structures/ArrayStack.java))</br>
     [TBA]
-    2. <b>LinkedListStack</b> ([com.omeraytekin.data_structures.ArrayList](src/com/omeraytekin/data_structures/LinkedListStack.java))</br>
+    2. <b>LinkedListStack</b> ([com.omeraytekin.data_structures.LinkedListStack](src/com/omeraytekin/data_structures/LinkedListStack.java))</br>
     [TBA]
