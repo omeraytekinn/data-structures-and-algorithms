@@ -71,6 +71,7 @@ public class LinkedList<T> implements List<T> {
     public int findIndex(T item) throws NoSuchElementException {
         Iterator<T> iterator = iterator();
         int index = 0;
+
         while (iterator.hasNext()) {
             // To searching null value of data in nodes checking is value null.
             // Otherwise check equality of data
@@ -82,6 +83,7 @@ public class LinkedList<T> implements List<T> {
             } else if (item.equals(data)) {
                 return index;
             }
+            index++;
         }
         throw new NoSuchElementException("Item couldn't be found.");
     }
