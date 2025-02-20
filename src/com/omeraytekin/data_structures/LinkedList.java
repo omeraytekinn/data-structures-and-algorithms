@@ -12,6 +12,13 @@ public class LinkedList<T> implements List<T> {
         size = 0;
     }
 
+    public LinkedList(T[] items) {
+        this();
+        for (int i = 0; i < items.length; i++) {
+            this.insert(items[i]);
+        }
+    }
+
     public void insert(T item) {
         if (isEmpty()) {
             head = tail = new Node<>(item);
