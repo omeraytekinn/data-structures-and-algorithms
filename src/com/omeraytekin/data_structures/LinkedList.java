@@ -30,6 +30,25 @@ public class LinkedList<T> implements List<T> {
         size++;
     }
 
+    /*
+     * This function calls insertAt function.
+     * Since target element is first element, complexity to reach first element
+     * is O(1).
+     * So complexity is O(1)
+     */
+    public void insertFirst(T item) {
+        insertAt(0, item);
+    }
+
+    /*
+     * This function calls insert function.
+     * Since complexity of insert operation is O(1),
+     * complexity of this method is O(1)
+     */
+    public void insertLast(T item) {
+        insert(item);
+    }
+
     public void insertAt(int index, T item) {
         checkIndex(index);
 
@@ -136,6 +155,29 @@ public class LinkedList<T> implements List<T> {
             trav = trav.next();
         }
         return removeNode(trav);
+    }
+
+    /*
+     * This function calls removeAt function.
+     * Since target element is first element, complexity to reach first element
+     * is O(1).
+     * So complexity is O(1)
+     */
+    public T removeFirst() throws NoSuchElementException {
+        return removeAt(0);
+    }
+
+    /*
+     * This function make remove operation of last element by using tail of the
+     * list.
+     * Since we can reach directly to the tail element, complexity is O(1)
+     */
+    public T removeLast() throws NoSuchElementException {
+        if (tail == null) {
+            throw new NoSuchElementException("List is empty.");
+        }
+
+        return removeNode(tail);
     }
 
     public boolean isEmpty() {

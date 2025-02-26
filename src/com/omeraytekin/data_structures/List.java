@@ -5,6 +5,10 @@ import java.util.NoSuchElementException;
 public interface List<T> extends Iterable<T> {
     public void insert(T item);
 
+    public void insertFirst(T item);
+
+    public void insertLast(T item);
+
     public void insertAt(int index, T item);
 
     public int findIndex(T item) throws NoSuchElementException;
@@ -16,6 +20,10 @@ public interface List<T> extends Iterable<T> {
     public void remove(T item) throws NoSuchElementException;
 
     public T removeAt(int index) throws IndexOutOfBoundsException;
+
+    public T removeFirst() throws NoSuchElementException;
+
+    public T removeLast() throws NoSuchElementException;
 
     public boolean isEmpty();
 
