@@ -79,6 +79,28 @@ public class ArrayList<T> implements List<T> {
         return (T) items[index];
     }
 
+    /*
+     * This method reaches element directly by index.
+     * So complexity of this method is O(1)
+     */
+    public T getFirst() throws NoSuchElementException {
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        return (T) items[0];
+    }
+
+    /*
+     * This method reaches element directly by index.
+     * So complexity of this method is O(1)
+     */
+    public T getLast() throws NoSuchElementException {
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        return (T) items[size - 1];
+    }
+
     public void setAt(int index, T item) throws IndexOutOfBoundsException {
         checkIndex(index);
 

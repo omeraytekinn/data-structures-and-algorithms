@@ -108,6 +108,28 @@ public class LinkedList<T> implements List<T> {
         return trav.data();
     }
 
+    /*
+     * This method reaches first element directly by using head.
+     * So complexity of this method is O(1)
+     */
+    public T getFirst() throws NoSuchElementException {
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        return (T) head.data();
+    }
+
+    /*
+     * This method reaches first element directly by using tail.
+     * So complexity of this method is O(1)
+     */
+    public T getLast() throws NoSuchElementException {
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        return (T) tail.data();
+    }
+
     public void setAt(int index, T item) throws IndexOutOfBoundsException {
         checkIndex(index);
 

@@ -5,13 +5,15 @@ import java.util.NoSuchElementException;
 public interface List<T> extends Iterable<T> {
     public void insert(T item);
 
-    public void insertLast(T item);
-
     public void insertAt(int index, T item);
 
     public int findIndex(T item) throws NoSuchElementException;
 
     public T getAt(int index) throws IndexOutOfBoundsException;
+
+    public T getFirst() throws NoSuchElementException;
+
+    public T getLast() throws NoSuchElementException;
 
     public void setAt(int index, T item) throws IndexOutOfBoundsException;
 
