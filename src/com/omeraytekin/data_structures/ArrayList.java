@@ -51,15 +51,6 @@ public class ArrayList<T> implements List<T> {
         insertAt(0, item);
     }
 
-    /*
-     * This function calls insert function.
-     * No need to shift elements to add element to end of list.
-     * So amortized complexity is O(1)
-     */
-    public void insertLast(T item) {
-        insert(item);
-    }
-
     public void insertAt(int index, T item) {
         checkIndex(index);
         if (size == maxSize) {

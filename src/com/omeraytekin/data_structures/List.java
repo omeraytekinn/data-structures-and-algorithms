@@ -5,8 +5,6 @@ import java.util.NoSuchElementException;
 public interface List<T> extends Iterable<T> {
     public void insert(T item);
 
-    public void insertFirst(T item);
-
     public void insertLast(T item);
 
     public void insertAt(int index, T item);

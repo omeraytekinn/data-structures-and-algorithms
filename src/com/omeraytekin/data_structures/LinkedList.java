@@ -40,15 +40,6 @@ public class LinkedList<T> implements List<T> {
         insertAt(0, item);
     }
 
-    /*
-     * This function calls insert function.
-     * Since complexity of insert operation is O(1),
-     * complexity of this method is O(1)
-     */
-    public void insertLast(T item) {
-        insert(item);
-    }
-
     public void insertAt(int index, T item) {
         checkIndex(index);
 
