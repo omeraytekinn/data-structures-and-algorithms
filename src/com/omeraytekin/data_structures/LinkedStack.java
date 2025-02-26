@@ -3,14 +3,14 @@ package com.omeraytekin.data_structures;
 import java.util.EmptyStackException;
 import java.util.Iterator;
 
-public class LinkedListStack<T> implements Stack<T> {
+public class LinkedStack<T> implements Stack<T> {
     List<T> stack;
 
-    public LinkedListStack() {
+    public LinkedStack() {
         stack = new LinkedList<>();
     }
 
-    public LinkedListStack(T[] items) {
+    public LinkedStack(T[] items) {
         this();
         // Pushing items in reverse order to keep pop order.
         for (int i = items.length - 1; i >= 0; i--) {
