@@ -160,25 +160,26 @@ public class LinearHashMap<K, V> extends AbstractMap<K, V> {
         return index;
     }
 
-    private class Node<K, V> {
-        private K key;
-        private V val;
+    private class Node<Y, Z> {
+        private Y key;
+        private Z val;
         private boolean deleted;
 
+        @SuppressWarnings("unused")
         private Node() {
         }
 
-        public Node(K key, V val) {
+        public Node(Y key, Z val) {
             this.key = key;
             this.val = val;
             deleted = false;
         }
 
-        public K key() {
+        public Y key() {
             return key;
         }
 
-        public V val() {
+        public Z val() {
             return val;
         }
 
@@ -186,11 +187,11 @@ public class LinearHashMap<K, V> extends AbstractMap<K, V> {
             return deleted;
         }
 
-        public void setKey(K key) {
+        public void setKey(Y key) {
             this.key = key;
         }
 
-        public void setVal(V val) {
+        public void setVal(Z val) {
             this.val = val;
         }
 

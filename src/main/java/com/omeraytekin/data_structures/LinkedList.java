@@ -224,44 +224,45 @@ public class LinkedList<T> implements List<T> {
         };
     }
 
-    private class Node<T> {
-        private Node<T> prev, next;
-        private T data;
+    private class Node<U> {
+        private Node<U> prev, next;
+        private U data;
 
+        @SuppressWarnings("unused")
         private Node() {
         }
 
-        public Node(T data) {
+        public Node(U data) {
             this(data, null, null);
         }
 
-        public Node(T data, Node<T> prev, Node<T> next) {
+        public Node(U data, Node<U> prev, Node<U> next) {
             this.data = data;
             this.next = next;
             this.prev = prev;
         }
 
-        public Node<T> next() {
+        public Node<U> next() {
             return next;
         }
 
-        public Node<T> prev() {
+        public Node<U> prev() {
             return prev;
         }
 
-        public T data() {
+        public U data() {
             return data;
         }
 
-        public void setNext(Node<T> next) {
+        public void setNext(Node<U> next) {
             this.next = next;
         }
 
-        public void setPrev(Node<T> prev) {
+        public void setPrev(Node<U> prev) {
             this.prev = prev;
         }
 
-        public void setData(T data) {
+        public void setData(U data) {
             this.data = data;
         }
     }

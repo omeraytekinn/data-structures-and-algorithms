@@ -118,37 +118,39 @@ public class HashMap<K, V> extends AbstractMap<K, V> {
         return index;
     }
 
-    private class Node<K, V> {
-        private K key;
-        private V val;
+    private class Node<Y, Z> {
+        private Y key;
+        private Z val;
 
+        @SuppressWarnings("unused")
         private Node() {
         }
 
-        public Node(K key, V val) {
+        public Node(Y key, Z val) {
             this.key = key;
             this.val = val;
         }
 
-        public K key() {
+        public Y key() {
             return key;
         }
 
-        public V val() {
+        public Z val() {
             return val;
         }
 
-        public void setKey(K key) {
+        public void setKey(Y key) {
             this.key = key;
         }
 
-        public void setVal(V val) {
+        public void setVal(Z val) {
             this.val = val;
         }
 
+        @SuppressWarnings("unchecked")
         @Override
         public boolean equals(Object o) {
-            Node<K, V> node = (Node<K, V>) o;
+            Node<Y, Z> node = (Node<Y, Z>) o;
             return key.equals(node.key());
         }
     }

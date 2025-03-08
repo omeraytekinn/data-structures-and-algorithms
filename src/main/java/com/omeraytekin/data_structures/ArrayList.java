@@ -73,6 +73,7 @@ public class ArrayList<T> implements List<T> {
         throw new NoSuchElementException("Item couldn't be found.");
     }
 
+    @SuppressWarnings("unchecked")
     public T getAt(int index) throws IndexOutOfBoundsException {
         checkIndex(index);
 
@@ -83,6 +84,7 @@ public class ArrayList<T> implements List<T> {
      * This method reaches element directly by index.
      * So complexity of this method is O(1)
      */
+    @SuppressWarnings("unchecked")
     public T getFirst() throws NoSuchElementException {
         if (isEmpty()) {
             throw new NoSuchElementException("List is empty.");
@@ -94,6 +96,7 @@ public class ArrayList<T> implements List<T> {
      * This method reaches element directly by index.
      * So complexity of this method is O(1)
      */
+    @SuppressWarnings("unchecked")
     public T getLast() throws NoSuchElementException {
         if (isEmpty()) {
             throw new NoSuchElementException("List is empty.");
@@ -168,6 +171,7 @@ public class ArrayList<T> implements List<T> {
                 return index < size;
             }
 
+            @SuppressWarnings("unchecked")
             @Override
             public T next() {
                 return (T) items[index++];
