@@ -118,9 +118,8 @@ public class ArrayList<T> implements List<T> {
 
     public T removeAt(int index) throws IndexOutOfBoundsException {
         checkIndex(index);
-
         T item = getAt(index);
-        for (int i = index; i < size; i++) {
+        for (int i = index; i < size - 1; i++) {
             items[i] = items[i + 1];
         }
         size--;
@@ -179,6 +178,17 @@ public class ArrayList<T> implements List<T> {
         };
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Items: [");
+        for (int i = 0; i < size - 1; i++) {
+            sb.append(items[i] + ", ");
+        }
+        sb.append(items[size - 1] + "]");
+        return sb.toString();
+    }
+
     private void growItems() {
         maxSize = (int) Math.floor(maxSize * growFactor) + 1;
         Object[] newItems = new Object[maxSize];
@@ -193,7 +203,7 @@ public class ArrayList<T> implements List<T> {
             throw new IndexOutOfBoundsException(
                     "Index value can not be below 0. You've entered index: " + index);
         }
-        if (index > size) {
+        if (index >= size) {
             throw new IndexOutOfBoundsException(
                     "List size is " + size + " . You've tried to reach index: " + index);
         }
