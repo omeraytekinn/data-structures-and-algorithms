@@ -54,13 +54,46 @@ public class MinHeapTest {
     }
 
     @Test
-    void testRemoveMaintainsHeapProperty() {
+    void testRemoveFirstItemMaintainsHeapProperty() {
+        heap.insert(5);
+        heap.insert(4);
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+        heap.remove(1);
+        assertTrue(heap.checkHeapProperty());
+    }
+
+    @Test
+    void testRemoveLastItemMaintainsHeapProperty() {
         heap.insert(5);
         heap.insert(4);
         heap.insert(3);
         heap.insert(2);
         heap.insert(1);
         heap.remove(3);
+        assertTrue(heap.checkHeapProperty());
+    }
+
+    @Test
+    void testRemoveMiddleItemMaintainsHeapProperty() {
+        heap.insert(5);
+        heap.insert(4);
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+        heap.remove(2);
+        assertTrue(heap.checkHeapProperty());
+    }
+
+    @Test
+    void testRemoveItemWithNoChildMaintainsHeapProperty() {
+        heap.insert(5);
+        heap.insert(4);
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+        heap.remove(4);
         assertTrue(heap.checkHeapProperty());
     }
 }
