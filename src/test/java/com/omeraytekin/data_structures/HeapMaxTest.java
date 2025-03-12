@@ -12,25 +12,27 @@ public class HeapMaxTest {
 
     @BeforeEach
     void setUp() {
-        heap = new Heap<>(HeapType.MAX_HEAP, 5, 2);
+        heap = new BinaryHeap<>(HeapType.MAX_HEAP, 5, 2);
     }
 
     @Test
     void testValidConstructor() {
-        Heap<Integer> heap = new Heap<>(HeapType.MAX_HEAP, 10, 2);
+        Heap<Integer> heap = new BinaryHeap<>(HeapType.MAX_HEAP, 10, 2);
         assertEquals(0, heap.size());
         assertTrue(heap.isEmpty());
     }
 
     @Test
     void testConstructorWithInvalidInitSize() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Heap<>(HeapType.MAX_HEAP, 0, 2));
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> new BinaryHeap<>(HeapType.MAX_HEAP, 0, 2));
         assertEquals(exception.getMessage(), "initSize must be greater than zero");
     }
 
     @Test
     void testConstructorWithInvalidGrowingFactor() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Heap<>(HeapType.MAX_HEAP, 10, 1));
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> new BinaryHeap<>(HeapType.MAX_HEAP, 10, 1));
         assertEquals(exception.getMessage(), "growingFactor must be greater than one");
     }
 
@@ -44,7 +46,7 @@ public class HeapMaxTest {
 
     @Test
     void testInsertHeapGrows() {
-        Heap<Integer> heap = new Heap<>(HeapType.MAX_HEAP, 5, 2);
+        Heap<Integer> heap = new BinaryHeap<>(HeapType.MAX_HEAP, 5, 2);
         for (int i = 0; i < 6; i++) {
             heap.insert(i);
         }

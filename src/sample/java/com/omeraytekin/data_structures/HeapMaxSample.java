@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class HeapMaxSample {
     public static void main(String[] args) {
-        Heap<Integer> heap = new Heap<>(HeapType.MAX_HEAP, 10, 2);
+        BinaryHeap<Integer> heap = new BinaryHeap<>(HeapType.MAX_HEAP, 10, 2);
         Random random = new Random();
         List<Integer> testData = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
@@ -32,7 +32,7 @@ public class HeapMaxSample {
         System.out.println("\n[Heap Order After Remove 20,40,60,80]");
         heap.printHeap();
 
-        heap = new Heap<>(HeapType.MAX_HEAP, 5, 2);
+        heap = new BinaryHeap<>(HeapType.MAX_HEAP, 5, 2);
         for (int i = 0; i < 5; i++) {
             heap.insert(i + 1);
         }
@@ -41,7 +41,7 @@ public class HeapMaxSample {
         heap.remove(3);
         heap.printHeap();
 
-        heap = new Heap<>(HeapType.MAX_HEAP, 5, 2);
+        heap = new BinaryHeap<>(HeapType.MAX_HEAP, 5, 2);
         for (int i = 0; i < 5; i++) {
             heap.insert(i + 1);
         }
