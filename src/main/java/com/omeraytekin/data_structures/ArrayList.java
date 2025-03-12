@@ -152,6 +152,13 @@ public class ArrayList<T> implements List<T> {
         }
     }
 
+    public void clean() {
+        for (int i = 0; i < size; i++) {
+            items[i] = null;
+        }
+        size = 0;
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }

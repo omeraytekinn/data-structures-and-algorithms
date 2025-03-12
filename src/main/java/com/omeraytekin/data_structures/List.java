@@ -25,6 +25,8 @@ public interface List<T> extends Iterable<T> {
 
     public T removeLast() throws NoSuchElementException;
 
+    public void clean();
+
     public boolean isEmpty();
 
     public int size();

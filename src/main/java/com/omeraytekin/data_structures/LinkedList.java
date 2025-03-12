@@ -193,6 +193,21 @@ public class LinkedList<T> implements List<T> {
         return removeNode(tail);
     }
 
+    public void clean() {
+        Node<T> trav = head;
+        while (trav != null) {
+            Node<T> nextNode = trav.next;
+            trav.next = null;
+            trav.prev = null;
+            trav.data = null;
+            trav = nextNode;
+        }
+        head = null;
+        tail = null;
+        size = 0;
+
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
