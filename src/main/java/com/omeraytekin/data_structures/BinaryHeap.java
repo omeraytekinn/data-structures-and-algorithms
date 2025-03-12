@@ -38,12 +38,16 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
     }
 
     @Override
-    public T getFirst() {
-        return items.getFirst();
+    public T getFirst() throws NoSuchElementException {
+        try {
+            return items.getFirst();
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("Heap is empty");
+        }
     }
 
     @Override
-    public boolean exists(T item) {
+    public boolean contains(T item) {
         try {
             items.findIndex(item);
             return true;

@@ -5,9 +5,9 @@ import java.util.NoSuchElementException;
 public interface Heap<T extends Comparable<T>> {
     public void insert(T item);
 
-    public T getFirst();
+    public T getFirst() throws NoSuchElementException;
 
-    public boolean exists(T item);
+    public boolean contains(T item);
 
     public void remove(T item) throws NoSuchElementException;
 
