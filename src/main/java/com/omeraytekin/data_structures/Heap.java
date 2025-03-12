@@ -2,17 +2,33 @@ package com.omeraytekin.data_structures;
 
 import java.util.NoSuchElementException;
 
-public class MinHeap<T extends Comparable<T>> {
+public class Heap<T extends Comparable<T>> {
     private List<T> items;
+    private HeapType type;
+    private float growingFactor;
 
-    MinHeap(int initSize, float growingFactor) {
+    Heap() {
+        this(32);
+    }
+
+    Heap(int initSize) {
+        this(HeapType.MIN_HEAP, initSize, 2);
+    }
+
+    Heap(int initSize, float growingFactor) {
+        this(HeapType.MIN_HEAP, initSize, growingFactor);
+    }
+
+    Heap(HeapType type, int initSize, float growingFactor) {
         if (initSize <= 0) {
             throw new IllegalArgumentException("initSize must be greater than zero");
         }
         if (growingFactor <= 1) {
             throw new IllegalArgumentException("growingFactor must be greater than one");
         }
-        this.items = new ArrayList<>(initSize, growingFactor);
+        items = new ArrayList<>(initSize, growingFactor);
+        this.type = type;
+        this.growingFactor = growingFactor;
     }
 
     public void insert(T item) {
@@ -40,8 +56,24 @@ public class MinHeap<T extends Comparable<T>> {
         return true;
     }
 
+    public void changeHeapType(HeapType type) {
+        if (!this.type.equals(type)) {
+            this.type = type;
+            List<T> tempItems = items;
+            items = new ArrayList<>(items.size(), growingFactor);
+            tempItems.forEach((item) -> {
+                insert(item);
+            });
+            tempItems.clear();
+            tempItems = null;
+        }
+    }
+
+    public HeapType getType() {
+        return type;
+    }
+
     public void printHeap() {
-        System.out.println("size: " + size());
         System.out.println(items);
     }
 
@@ -76,11 +108,11 @@ public class MinHeap<T extends Comparable<T>> {
         int rightIndex = rightChildIndex(index);
         T leftChild = leftIndex < size() ? items.getAt(leftIndex) : null;
         T rightChild = rightIndex < size() ? items.getAt(rightIndex) : null;
-        if (leftChild != null && item.compareTo(leftChild) > 0) {
+        if (leftChild != null && compare(item, leftChild) > 0) {
             swap(index, leftIndex);
             index = leftIndex;
             sink(index);
-        } else if (rightChild != null && item.compareTo(rightChild) > 0) {
+        } else if (rightChild != null && compare(item, rightChild) > 0) {
             swap(index, rightIndex);
             index = rightIndex;
             sink(index);
@@ -106,6 +138,14 @@ public class MinHeap<T extends Comparable<T>> {
     private int compareParent(int index) {
         T item = items.getAt(index);
         T parent = items.getAt(parentIndex(index));
-        return parent.compareTo(item);
+        return compare(parent, item);
+    }
+
+    private int compare(T item1, T item2) {
+        if (HeapType.MIN_HEAP.equals(type)) {
+            return item1.compareTo(item2);
+        } else {
+            return item2.compareTo(item1);
+        }
     }
 }
