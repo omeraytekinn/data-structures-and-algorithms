@@ -152,7 +152,7 @@ public class ArrayList<T> implements List<T> {
         }
     }
 
-    public void clean() {
+    public void clear() {
         for (int i = 0; i < size; i++) {
             items[i] = null;
         }
