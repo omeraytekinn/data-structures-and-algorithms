@@ -1,25 +1,28 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.tree;
 
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.ArrayList;
+import com.omeraytekin.data_structures.list.List;
 
 public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
     private List<T> items;
     private HeapType type;
     private float growingFactor;
 
-    BinaryHeap() {
+    public BinaryHeap() {
         this(32);
     }
 
-    BinaryHeap(int initSize) {
+    public BinaryHeap(int initSize) {
         this(HeapType.MIN_HEAP, initSize, 2);
     }
 
-    BinaryHeap(int initSize, float growingFactor) {
+    public BinaryHeap(int initSize, float growingFactor) {
         this(HeapType.MIN_HEAP, initSize, growingFactor);
     }
 
-    BinaryHeap(HeapType type, int initSize, float growingFactor) {
+    public BinaryHeap(HeapType type, int initSize, float growingFactor) {
         if (initSize <= 0) {
             throw new IllegalArgumentException("initSize must be greater than zero");
         }

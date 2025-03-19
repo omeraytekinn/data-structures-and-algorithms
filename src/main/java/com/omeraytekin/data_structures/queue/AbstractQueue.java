@@ -1,7 +1,9 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.queue;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.List;
 
 public abstract class AbstractQueue<T> implements Queue<T> {
     List<T> queue;

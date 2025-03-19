@@ -1,6 +1,10 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.map;
 
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.ArrayList;
+import com.omeraytekin.data_structures.list.LinkedList;
+import com.omeraytekin.data_structures.list.List;
 
 /**
  * Chaining HashMap with LinkedList

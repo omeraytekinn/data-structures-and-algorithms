@@ -1,4 +1,4 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

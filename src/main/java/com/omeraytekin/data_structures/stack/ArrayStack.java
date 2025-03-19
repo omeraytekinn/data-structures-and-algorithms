@@ -1,7 +1,10 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.stack;
 
 import java.util.EmptyStackException;
 import java.util.Iterator;
+
+import com.omeraytekin.data_structures.list.ArrayList;
+import com.omeraytekin.data_structures.list.List;
 
 public class ArrayStack<T> implements Stack<T> {
     List<T> stack;

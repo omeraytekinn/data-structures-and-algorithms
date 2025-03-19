@@ -1,6 +1,9 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.map;
 
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.ArrayList;
+import com.omeraytekin.data_structures.list.List;
 
 /**
  * Linear Probing HashMap

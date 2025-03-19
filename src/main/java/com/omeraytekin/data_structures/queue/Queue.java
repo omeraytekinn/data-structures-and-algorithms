@@ -1,4 +1,4 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.queue;
 
 import java.util.NoSuchElementException;
 

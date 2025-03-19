@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.omeraytekin.data_structures.tree.BinaryHeap;
+import com.omeraytekin.data_structures.tree.Heap;
+import com.omeraytekin.data_structures.tree.HeapType;
+
 public class HeapMaxTest {
     private Heap<Integer> heap;
 

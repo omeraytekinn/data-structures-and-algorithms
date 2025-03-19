@@ -1,6 +1,9 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.queue;
 
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.ArrayList;
+import com.omeraytekin.data_structures.list.List;
 
 public class ArrayQueue<T> extends AbstractQueue<T> {
     List<T> queue;

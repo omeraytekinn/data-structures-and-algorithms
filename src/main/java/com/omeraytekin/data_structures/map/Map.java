@@ -1,6 +1,8 @@
-package com.omeraytekin.data_structures;
+package com.omeraytekin.data_structures.map;
 
 import java.util.NoSuchElementException;
+
+import com.omeraytekin.data_structures.list.List;
 
 public interface Map<K, V> {
     public void put(K key, V val);
