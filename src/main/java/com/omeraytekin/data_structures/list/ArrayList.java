@@ -73,6 +73,15 @@ public class ArrayList<T> implements List<T> {
         throw new NoSuchElementException("Item couldn't be found.");
     }
 
+    public boolean exists(T item) {
+        for (int i = 0; i < size; i++) {
+            if (items[i].equals(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @SuppressWarnings("unchecked")
     public T getAt(int index) throws IndexOutOfBoundsException {
         checkIndex(index);

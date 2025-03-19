@@ -98,6 +98,24 @@ public class LinkedList<T> implements List<T> {
         throw new NoSuchElementException("Item couldn't be found.");
     }
 
+    public boolean exists(T item) {
+        Iterator<T> iterator = iterator();
+
+        while (iterator.hasNext()) {
+            // To searching null value of data in nodes checking is value null.
+            // Otherwise check equality of data
+            T data = iterator.next();
+            if (item == null) {
+                if (data == null) {
+                    return true;
+                }
+            } else if (item.equals(data)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public T getAt(int index) throws IndexOutOfBoundsException {
         checkIndex(index);
 

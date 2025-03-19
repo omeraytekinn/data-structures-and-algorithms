@@ -9,6 +9,8 @@ public interface List<T> extends Iterable<T> {
 
     public int findIndex(T item) throws NoSuchElementException;
 
+    public boolean exists(T item);
+
     public T getAt(int index) throws IndexOutOfBoundsException;
 
     public T getFirst() throws NoSuchElementException;
