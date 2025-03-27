@@ -3,11 +3,8 @@ package com.omeraytekin.data_structures.queue;
 import java.util.NoSuchElementException;
 
 import com.omeraytekin.data_structures.list.LinkedList;
-import com.omeraytekin.data_structures.list.List;
 
 public class LinkedQueue<T> extends AbstractQueue<T> {
-    List<T> queue;
-
     public LinkedQueue() {
         queue = new LinkedList<>();
     }
